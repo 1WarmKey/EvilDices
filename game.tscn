@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1o5v205ixx2t"]
+
+[ext_resource type="Script" uid="uid://ca3s20ddiux8p" path="res://game.gd" id="1_80nbo"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_80nbo")
+metadata/_edit_horizontal_guides_ = [1023.0]
+metadata/_edit_vertical_guides_ = [985.0, -1336.0]
+
+[node name="PointsLabel" type="Label" parent="."]
+offset_left = 821.0
+offset_top = 44.0
+offset_right = 1167.0
+offset_bottom = 181.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 3
+
+[node name="FinalLabel" type="Label" parent="."]
+offset_left = 811.0
+offset_top = 227.0
+offset_right = 1157.0
+offset_bottom = 364.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 3
+
+[node name="Button_play" type="Button" parent="."]
+offset_left = 1512.0
+offset_top = 904.0
+offset_right = 1869.0
+offset_bottom = 1023.0
+text = "Play"
+icon_alignment = 1
+
+[node name="Button_drop" type="Button" parent="."]
+offset_left = 1104.0
+offset_top = 904.0
+offset_right = 1461.0
+offset_bottom = 1023.0
+text = "Drop"
+icon_alignment = 1
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 805.0
+offset_right = 318.0
+offset_bottom = 1023.0
+text = "d6"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 405.0
+offset_top = 805.0
+offset_right = 637.0
+offset_bottom = 1023.0
+text = "d6"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 709.0
+offset_top = 804.0
+offset_right = 941.0
+offset_bottom = 1022.0
+text = "d6"
+
+[node name="Devoloper tools" type="Button" parent="."]
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 256.0
+offset_bottom = 62.0
+text = "Devoloper tools +600 points"
+
+[connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Button_drop" to="." method="_on_button_drop_pressed"]
+[connection signal="button_down" from="Button1" to="." method="_on_button_1_button_down"]
+[connection signal="pressed" from="Devoloper tools" to="." method="_on_devoloper_tools_pressed"]
