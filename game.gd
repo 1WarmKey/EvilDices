@@ -4,7 +4,7 @@ extends Node2D
 var pressed_buttons := []
 #Количество очков
 var points := 0
-
+# Тест коммита
 
 #Бросок любого кубика
 func roll():
