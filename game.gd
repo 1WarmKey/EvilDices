@@ -6,14 +6,49 @@ var pressed_buttons := []
 var points := 0
 # Тест коммита
 
+#Номер раунда
+var raund := 0
+#Номер финального раунда
+var final_raund := 20
+
+#Словарь с кубиками
+var dcie_dict := {
+	"d2": 2,
+	"d6": 6,
+	"d8": 8,
+	"d10": 10,
+	"d12": 12,
+	"d20": 20,
+}
+
+
+#Оброботчик раунда и подсчет
+func raund_counter():
+	if pressed_buttons.size() == 0:
+		print("Нет выбранных кубиков, раунд не засчитан!")
+		return
+	raund = raund + 1 
+	$LabelRaund.text = "Раунд: %d из %d" % [raund, final_raund]
+	print("Раунд ", raund)
+	if raund >= 20 and points <= 666:
+		print("Ты проиграл свою душу")
+
+>>>>>>> f52a1a1 (Add raund and slots.)
+
 #Бросок любого кубика
+func dices(d: int):
+	var roll_dices := randi() % d + 1
+	return roll_dices
+
+
+#Подсчет всех выбранных кубиков
 func roll():
 	if pressed_buttons.size() == 0:
 		print("Нет выбранных кубиков!")
 		return
 
 	for id in pressed_buttons:
-		var roll := randi() % 6 + 1 
+		var roll = dices(6)
 		points += roll
 		print("Кубик ", id, " выдал:", roll, " очков!")
 	$PointsLabel.text = "Очки: %d" % points + " из 666"
@@ -53,6 +88,7 @@ func win_game():
 func _on_button_play_pressed() -> void:
 	win_game()
 	roll()
+	raund_counter()
 
 
 func _on_devoloper_tools_pressed() -> void:
