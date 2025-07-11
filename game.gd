@@ -33,7 +33,6 @@ func raund_counter():
 	if raund >= 20 and points <= 666:
 		print("Ты проиграл свою душу")
 
->>>>>>> f52a1a1 (Add raund and slots.)
 
 #Бросок любого кубика
 func dices(d: int):
