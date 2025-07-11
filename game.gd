@@ -10,6 +10,10 @@ var points := 0
 var round := 0
 #Номер финального раунда
 var final_round := 20
+#Количсетво рук
+var hand_point := 3
+var previous_hand_point := 0
+var button_container : Node2D
 
 #Словарь с кубиками
 var dcie_dict := {
@@ -47,11 +51,14 @@ func roll():
 		return
 
 	for id in pressed_buttons:
-		var roll = dices(6)
+		var roll = dices(6) # сюда должна передоваться сторна кубика
 		points += roll
 		print("Кубик ", id, " выдал:", roll, " очков!")
 	$PointsLabel.text = "Очки: %d" % points + " из 666"
 	print("Итого очков:", points)
+
+
+
 
 
 #Выборка всех кнопок
@@ -59,6 +66,8 @@ func _ready():
 	$Button1.pressed.connect(Callable(self, "_on_button_pressed").bind(1))
 	$Button2.pressed.connect(Callable(self, "_on_button_pressed").bind(2))
 	$Button3.pressed.connect(Callable(self, "_on_button_pressed").bind(3))
+	button_container = Node2D.new()
+	add_child(button_container)
 
 
 #Вжатие кнопок и добавление в массив
@@ -92,3 +101,33 @@ func _on_button_play_pressed() -> void:
 
 func _on_devoloper_tools_pressed() -> void:
 	points =+ 600
+
+func _on_devoloper_tools_2_pressed() -> void:
+	hand_point += 1
+	print("Теперь hand_point:", hand_point)
+
+
+#Плохая практика, процеес выполняется без прерывно проверя увеличилась ли рука нужно будет сделать что бы только если руку увеличило проверялось
+func _process(_delta):
+	if hand_point > previous_hand_point:
+		for i in range(previous_hand_point, hand_point):
+			spawn_button(i)
+		previous_hand_point = hand_point
+
+func spawn_button(index: int):
+	var btn := Button.new()
+	btn.text = "Slot %d" % (index + 1)
+	btn.position = Vector2(200 + index * 120, 200)
+	btn.pressed.connect(func():
+		_on_dynamic_button_pressed(index)
+		)
+	button_container.add_child(btn)
+
+func _on_dynamic_button_pressed(index):
+	print("Нажата кнопка №%d" % (index + 1))
+
+
+func _on_exit_button_pressed() -> void:
+	print("Yes")
+	var menuScene = load("res://Scens/game_menu.tscn")
+	get_tree().change_scene_to_packed(menuScene)

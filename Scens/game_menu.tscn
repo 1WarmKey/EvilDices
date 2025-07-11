@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bthlnmmms048"]
+
+[ext_resource type="Script" uid="uid://dt83s7iup6n1q" path="res://game_menu.gd" id="1_kpbuc"]
+[ext_resource type="Shader" uid="uid://c36j7xh8lcki6" path="res://Scens/game_menu.gdshader" id="2_as202"]
+[ext_resource type="Texture2D" uid="uid://u25dp4x6ht6v" path="res://Assets/Default.png" id="3_k08yp"]
+[ext_resource type="Texture2D" uid="uid://c7mmgtogprqks" path="res://Assets/Hover.png" id="4_f846e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpgih"]
+shader = ExtResource("2_as202")
+shader_parameter/time_speed = 12.0
+shader_parameter/glitch_intensity = 1.0
+shader_parameter/line_thickness = 0.75
+shader_parameter/base_color1 = Color(0.528441, 0.112665, 0.0709756, 1)
+shader_parameter/base_color2 = Color(0.1, 0.15, 0.2, 1)
+shader_parameter/scanline_color = Color(0.728058, 0.816159, 0.867173, 0.08)
+
+[node name="Game_menu" type="Node2D"]
+script = ExtResource("1_kpbuc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fpgih")
+offset_left = -5.0
+offset_top = -28.0
+offset_right = 1945.0
+offset_bottom = 1105.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 618.0
+offset_top = 80.0
+offset_right = 1345.0
+offset_bottom = 184.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 100
+text = "EvilDices"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 3
+offset_left = 733.0
+offset_top = 251.0
+offset_right = 1225.0
+offset_bottom = 587.0
+texture_normal = ExtResource("3_k08yp")
+texture_hover = ExtResource("4_f846e")
+stretch_mode = 5
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
