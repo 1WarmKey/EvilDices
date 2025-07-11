@@ -7,9 +7,9 @@ var points := 0
 # Тест коммита
 
 #Номер раунда
-var raund := 0
+var round := 0
 #Номер финального раунда
-var final_raund := 20
+var final_round := 20
 
 #Словарь с кубиками
 var dcie_dict := {
@@ -23,14 +23,14 @@ var dcie_dict := {
 
 
 #Оброботчик раунда и подсчет
-func raund_counter():
+func round_counter():
 	if pressed_buttons.size() == 0:
 		print("Нет выбранных кубиков, раунд не засчитан!")
 		return
-	raund = raund + 1 
-	$LabelRaund.text = "Раунд: %d из %d" % [raund, final_raund]
-	print("Раунд ", raund)
-	if raund >= 20 and points <= 666:
+	round = round + 1 
+	$LabelRound.text = "Раунд: %d из %d" % [round, final_round]
+	print("Раунд ", round)
+	if round >= 20 and points <= 666:
 		print("Ты проиграл свою душу")
 
 
@@ -87,7 +87,7 @@ func win_game():
 func _on_button_play_pressed() -> void:
 	win_game()
 	roll()
-	raund_counter()
+	round_counter()
 
 
 func _on_devoloper_tools_pressed() -> void:
