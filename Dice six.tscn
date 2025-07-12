@@ -1,0 +1,178 @@
+[gd_scene load_steps=20 format=3 uid="uid://bh4c01hbiwdiy"]
+
+[ext_resource type="Script" uid="uid://dyhxa0t10dqqv" path="res://dice_six.gd" id="1_ryyxp"]
+[ext_resource type="Texture2D" uid="uid://dfpmxpra86w16" path="res://Assets/Drevesina.png" id="2_a5cia"]
+[ext_resource type="Texture2D" uid="uid://b8dsg50lgjd33" path="res://Assets/d6 6 side.png" id="2_twsv2"]
+[ext_resource type="Texture2D" uid="uid://dqvso6yqlpr3n" path="res://Assets/d6 rotation 1.png" id="3_02hlr"]
+[ext_resource type="Texture2D" uid="uid://x4off3pg54ls" path="res://Assets/d6 rotation 2.png" id="4_6lefw"]
+[ext_resource type="Texture2D" uid="uid://codop6p8iwju1" path="res://Assets/d6 3 side.png" id="5_a5cia"]
+[ext_resource type="Texture2D" uid="uid://bls3jxok725kk" path="res://Assets/d6 5 side.png" id="6_cbaxh"]
+[ext_resource type="Texture2D" uid="uid://dj4fek6esqp8b" path="res://Assets/d6 1.png" id="7_6lefw"]
+[ext_resource type="Texture2D" uid="uid://bei35nenkrlhu" path="res://Assets/d6 2 side.png" id="8_a5cia"]
+[ext_resource type="Texture2D" uid="uid://b0c6lbq4xh6rf" path="res://Assets/d6 4 side.png" id="9_cbaxh"]
+[ext_resource type="AudioStream" uid="uid://befi6nh6olwlg" path="res://Assets/Dice_sound2.mp3" id="11_cbaxh"]
+
+[sub_resource type="Animation" id="Animation_8joq3"]
+resource_name = "Roll to 1"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("7_6lefw")]
+}
+
+[sub_resource type="Animation" id="Animation_ot0y0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_twsv2")]
+}
+
+[sub_resource type="Animation" id="Animation_twg31"]
+resource_name = "Roll to 2"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("8_a5cia")]
+}
+
+[sub_resource type="Animation" id="Animation_f8lrv"]
+resource_name = "Roll to 3"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia")]
+}
+
+[sub_resource type="Animation" id="Animation_dr02w"]
+resource_name = "Roll to 4"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("9_cbaxh")]
+}
+
+[sub_resource type="Animation" id="Animation_57aka"]
+resource_name = "Roll to 5"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh")]
+}
+
+[sub_resource type="Animation" id="Animation_yi8lq"]
+resource_name = "Roll to 6"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice_sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.4, 0.566667, 0.666667, 0.833333, 0.966667, 1.06667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_twsv2"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("5_a5cia"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("6_cbaxh"), ExtResource("3_02hlr"), ExtResource("4_6lefw"), ExtResource("2_twsv2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8lrv"]
+_data = {
+&"RESET": SubResource("Animation_ot0y0"),
+&"Roll to 1": SubResource("Animation_8joq3"),
+&"Roll to 2": SubResource("Animation_twg31"),
+&"Roll to 3": SubResource("Animation_f8lrv"),
+&"Roll to 4": SubResource("Animation_dr02w"),
+&"Roll to 5": SubResource("Animation_57aka"),
+&"Roll to 6": SubResource("Animation_yi8lq")
+}
+
+[node name="Dice six" type="Node2D"]
+position = Vector2(960, 566)
+scale = Vector2(6.69271, 6.69271)
+script = ExtResource("1_ryyxp")
+
+[node name="Back_graund" type="Sprite2D" parent="."]
+texture_filter = 3
+texture_repeat = 2
+position = Vector2(0, -1.793)
+texture = ExtResource("2_a5cia")
+region_enabled = true
+region_rect = Rect2(0, 0, 289.82, 170)
+region_filter_clip_enabled = true
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.5)
+texture_filter = 3
+position = Vector2(2.635, 3.14)
+texture = ExtResource("2_twsv2")
+
+[node name="Dice_sprite" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_twsv2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f8lrv")
+}
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 3
+offset_left = -138.0
+offset_top = -59.0
+offset_right = 138.0
+offset_bottom = -28.0
+text = "Холодный кубик льда кинь меня"
+metadata/_edit_use_anchors_ = true
+
+[node name="DiceSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_cbaxh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
